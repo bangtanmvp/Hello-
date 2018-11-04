@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+</head>
+<body>
+    <div>
+    <a href="https://www.mwave.me/en/signin?redirectUrl=">Sign in</a></div>
+    <div>
+    <a href="https://www.mwave.me/signout" target=https://bangtanmvp.github.io/hi/code1.html"_blank">Sign out (close the new tab after logging out successfully)</a></div>
+    <div>
+        <button id="vote">Vote</button>
+    </div>
+    <script>
+        document.getElementById("vote").addEventListener("click", function() {
+            const form = document.createElement("form");
+            form.action = "http://mama.mwave.me/en/myVoteState";
+            form.method = "post";
+            form.target = "_blank";
+            
+            ["no_1=6", "no_2=11", "no_3=17", "no_4=22", "no_5=29", "no_6=30", "no_7=37", "no_8=43", "no_9=46", "no_10=56", "no_11=61", "no_12=63", "no_13=69", "no_14=74", "no_15=80", "no_16=85", "no_17=108", "no_18=147"]
+            .forEach((str) => {
+                const [key, value] = str.split("=");
+                const elm = document.createElement("input");
+                elm.type = "hidden";
+                elm.name = key;
+                elm.value = value;
+                form.appendChild(elm);
+            }, false);
+            document.body.appendChild(form);
+            form.submit();
+        }, false);
+    </script>
+</body>
+</html>
